@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimalist Todo App</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-title">
+        <span class="icon-badge"><i class="fa-solid fa-list-check"></i></span>
+        <h1>Tasks</h1>
+      </div>
+      <p class="subtitle" id="date-display">Today's Focus</p>
+    </header>
+
+    <!-- Task Input Form -->
+    <form id="todo-form" class="todo-form">
+      <div class="input-wrapper">
+        <i class="fa-solid fa-plus input-icon"></i>
+        <input 
+          type="text" 
+          id="todo-input" 
+          placeholder="What do you need to do?" 
+          autocomplete="off" 
+          required 
+        />
+      </div>
+      <button type="submit" class="btn-primary" aria-label="Add task">
+        Add Task
+      </button>
+    </form>
+
+    <!-- Filter & Stats Bar -->
+    <div class="control-bar">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+      <button id="clear-completed-btn" class="btn-text" title="Clear all completed tasks">
+        Clear completed
+      </button>
+    </div>
+
+    <!-- Todo List -->
+    <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="empty-state">
+      <div class="empty-icon"><i class="fa-regular fa-clipboard"></i></div>
+      <p class="empty-text">No tasks here yet!</p>
+      <span class="empty-subtext">Add a task above to get started.</span>
+    </div>
+
+    <!-- Footer Stats -->
+    <footer class="app-footer">
+      <span id="items-left" class="task-count">0 tasks left</span>
+      <span class="storage-notice"><i class="fa-solid fa-shield-halved"></i> Auto-saved locally</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
